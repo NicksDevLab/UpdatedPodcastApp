@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G72" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Episode" representedClassName="Episode" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="contentEncoded" optional="YES" attributeType="String"/>
+        <attribute name="copyright" optional="YES" attributeType="String"/>
+        <attribute name="dateTimePlayed" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="enclosure" optional="YES" attributeType="String"/>
+        <attribute name="episodeDescription" optional="YES" attributeType="String"/>
+        <attribute name="episodeLegnth" optional="YES" attributeType="String"/>
+        <attribute name="episodeType" optional="YES" attributeType="String"/>
+        <attribute name="episodeUrl" optional="YES" attributeType="String"/>
+        <attribute name="guid" optional="YES" attributeType="String"/>
+        <attribute name="hasBeenPlayed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="hasBeenViewed" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="itunesAuthor" optional="YES" attributeType="String"/>
+        <attribute name="itunesDuration" optional="YES" attributeType="String"/>
+        <attribute name="itunesEpisode" optional="YES" attributeType="String"/>
+        <attribute name="itunesEpisodeType" optional="YES" attributeType="String"/>
+        <attribute name="itunesExplicit" optional="YES" attributeType="String"/>
+        <attribute name="itunesImage" optional="YES" attributeType="String"/>
+        <attribute name="itunesKeywords" optional="YES" attributeType="String"/>
+        <attribute name="itunesSeason" optional="YES" attributeType="String"/>
+        <attribute name="itunesSubtitle" optional="YES" attributeType="String"/>
+        <attribute name="itunesSummary" optional="YES" attributeType="String"/>
+        <attribute name="itunesTitle" optional="YES" attributeType="String"/>
+        <attribute name="lastPlayedLocation" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
+        <attribute name="mediaPlayer" optional="YES" attributeType="String"/>
+        <attribute name="pubDate" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="podcast" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Podcast" inverseName="episodes" inverseEntity="Podcast"/>
+    </entity>
+    <entity name="Podcast" representedClassName="Podcast" syncable="YES">
+        <attribute name="artistId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="artistName" optional="YES" attributeType="String"/>
+        <attribute name="artistViewUrl" optional="YES" attributeType="String"/>
+        <attribute name="artworkUrl30" optional="YES" attributeType="String"/>
+        <attribute name="artworkUrl60" optional="YES" attributeType="String"/>
+        <attribute name="artworkUrl100" optional="YES" attributeType="String"/>
+        <attribute name="artworkUrl600" optional="YES" attributeType="String"/>
+        <attribute name="collectionCensoredName" optional="YES" attributeType="String"/>
+        <attribute name="collectionExplicitness" optional="YES" attributeType="String"/>
+        <attribute name="collectionHdPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="collectionId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionName" optional="YES" attributeType="String"/>
+        <attribute name="collectionPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="collectionViewUrl" optional="YES" attributeType="String"/>
+        <attribute name="contentAdvisoryRating" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="currency" optional="YES" attributeType="String"/>
+        <attribute name="feedUrl" optional="YES" attributeType="String"/>
+        <attribute name="genreIds" optional="YES" attributeType="String"/>
+        <attribute name="genres" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="imageData" optional="YES" attributeType="Binary"/>
+        <attribute name="kind" optional="YES" attributeType="String"/>
+        <attribute name="lastCheckedForNewEpisodes" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="primaryGenreName" optional="YES" attributeType="String"/>
+        <attribute name="releaseDate" optional="YES" attributeType="String"/>
+        <attribute name="trackCensoredName" optional="YES" attributeType="String"/>
+        <attribute name="trackCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="trackExplicitness" optional="YES" attributeType="String"/>
+        <attribute name="trackHdPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="trackHdRentalPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="trackId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="trackName" optional="YES" attributeType="String"/>
+        <attribute name="trackPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="trackRentalPrice" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="trackViewUrl" optional="YES" attributeType="String"/>
+        <attribute name="wrapperType" optional="YES" attributeType="String"/>
+        <relationship name="episodes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Episode" inverseName="podcast" inverseEntity="Episode"/>
+    </entity>
+    <entity name="SearchItem" representedClassName="SearchItem" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="term" attributeType="String" defaultValueString="&quot;&quot;"/>
+        <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <elements>
+        <element name="Episode" positionX="-592.362060546875" positionY="154.0433654785156" width="155.6715087890625" height="494"/>
+        <element name="Podcast" positionX="-1097.012390136719" positionY="18.61138916015625" width="215.5516357421875" height="14"/>
+        <element name="SearchItem" positionX="-63" positionY="-9" width="128" height="74"/>
+    </elements>
+</model>
